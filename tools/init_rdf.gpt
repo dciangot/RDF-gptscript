@@ -1,0 +1,10 @@
+name: init_rdf
+description: import ROOT and enable multithreading, then import default headers for higgs analysis
+argument: higgs_header_path: the path to the higgs headers
+
+
+import ROOT
+import os
+# Enable multi-threading
+ROOT.ROOT.EnableImplicitMT()
+ROOT.gInterpreter.Declare('#include ${higgs_header_path}')

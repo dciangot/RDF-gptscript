@@ -1,0 +1,15 @@
+name: 4mu_Z_filter
+description: select events from dataframe ${df} with 4 good muons candidates for Z boson
+argument: df: name of the dataframe
+
+df_ge4m = ${df}.Filter("nMuon>=4", "At least four muons")
+
+df_iso = df_ge4m.Filter("All(abs(Muon_pfRelIso04_all)<0.40)", "Require good isolation")
+df_kin = df_iso.Filter("All(Muon_pt>5) && All(abs(Muon_eta)<2.4)", "Good muon kinematics")
+df_ip3d = df_kin.Define("Muon_ip3d", "sqrt(Muon_dxy*Muon_dxy + Muon_dz*Muon_dz)")
+df_sip3d = df_ip3d.Define("Muon_sip3d", "Muon_ip3d/sqrt(Muon_dxyErr*Muon_dxyErr + Muon_dzErr*Muon_dzErr)")
+df_pv = df_sip3d.Filter("All(Muon_sip3d<4) && All(abs(Muon_dxy)<0.5) && All(abs(Muon_dz)<1.0)",
+                        "Track close to primary vertex with small uncertainty")
+${df} = df_pv.Filter("nMuon==4 && Sum(Muon_charge==1)==2 && Sum(Muon_charge==-1)==2",
+                       "Two positive and two negative muons")
+

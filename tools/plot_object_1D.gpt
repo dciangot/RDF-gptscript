@@ -1,0 +1,13 @@
+name: plot_object_1D
+description: plot an Histo1D histogram of ${object} in the dataframe ${df} with ${n_bins} bins and range spanning from ${min} to ${max}. Store the image in ${filepath}
+argument: df: the name of the RDataFrame dataframe
+argument: object: the name of the column in the RDataFrame dataframe
+argument: n_bins: number of bins
+argument: min: the minimum x axis value
+argument: max: the maximum x axis value
+argument: filepath: path where to store the figure
+
+h = {df}.Histo1D(("${object}", "" , ${n_bins}, ${min}, ${max}), "${object}")
+c = ROOT.TCanvas()
+h.Draw()
+c.SaveAs("${filepath}")

@@ -1,0 +1,9 @@
+name: load_df
+description: python load branch ${branch} for file ${data} into and RDataFrame, named ${df}
+argument: df: the name of the dataframe
+argument: data: the URL to the file to be loaded
+argument: branch: the ROOT branch to be loaded
+
+
+# Create a ROOT dataframe for each dataset
+df = ROOT.RDataFrame('${branch}', '${data}')

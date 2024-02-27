@@ -1,0 +1,8 @@
+name: 4mu_system
+description: calculate the invariant mass of the 4 muons ZZ system for dataframe ${df} and store it into a column named ${name}
+argument: df: name of the dataframe
+argument: name: the name of the new column
+argument: function: the header function name
+
+${df} = ${df}.Define("${name}", "${function}(Muon_pt, Muon_eta, Muon_phi, Muon_mass, Muon_charge)")
+
