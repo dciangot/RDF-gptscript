@@ -31,9 +31,9 @@ code to import ROOT and enable multithreading, then import default headers for h
 
 code to load branch Events from file root://eospublic.cern.ch//eos/root-eos/cms_opendata_2012_nanoaod_skimmed/SMHiggsToZZTo4L.root into an RDataFrame named higgs_df
 
-code to selectplot an Histo1D histogram of ${object} with ${n_bins} bins and range spannin from ${min} to ${max}. Store the image in ${filepath}
+code to select events with 4 good muons candidates for Z boson in the higgs_df dataframe
 
-code to draw an Histo1D of muons pt with 100 bins, starting from 0 to 200. Then store the image in plot.png
+code to draw an Histo1D of Muon_pt in higgs_df with 100 bins, starting from 0 to 200. Then store the image in plot.png
 
 execute script.py
 ```
