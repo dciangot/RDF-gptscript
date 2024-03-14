@@ -22,7 +22,7 @@ gptscript demo.gpt
 ## Demo content
 
 ```text
-tools: sys.exec, sys.write, github.com/dciangot/RDF-gptscript/tree/main 
+tools: sys.exec, sys.write, github.com/dciangot/RDF-gptscript
 
 
 write a python script script.py that contains the following blocks. each line is a tool to be matched separately, one after the other:
