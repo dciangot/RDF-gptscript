@@ -1,2 +1,2 @@
-export:  github.com/dciangot/rdf-gptscript/tools/init_rdf.gpt,  github.com/dciangot/rdf-gptscript/tools/load_df.gpt,  github.com/dciangot/rdf-gptscript/tools/4mu_system.gpt,  github.com/dciangot/rdf-gptscript/tools/4mu_Z_filter.gpt,  github.com/dciangot/rdf-gptscript/tools/plot_object_1D.gpt 
+export:  ./tools/init_rdf.gpt, ./tools/load_df.gpt,  ./tools/4mu_system.gpt,  ./tools/4mu_Z_filter.gpt,  ./tools/plot_object_1D.gpt 
 description: do analysis using RDataFrame and create plots
